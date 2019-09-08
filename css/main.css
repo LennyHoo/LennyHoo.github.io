@@ -218,10 +218,74 @@
 #app .center_con{
     float: left;
     width: 60%;
-    height: 500px;
-    border: 1px solid #000;
+    /* height: 500px; */
+    /* border: 1px solid #000; */
     padding: 0px;
     margin: 0px;
+}
+
+/* 文章概览 */
+#app .center_con .article_intro{
+    float: left;
+    width: 30%;
+    height: 300px;
+    margin-left: calc(2.5% - 10px);
+    margin-right: calc(2.5% - 10px);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(220,220,220);
+    overflow: hidden;
+}
+
+#app .center_con .article_intro:hover{
+    box-shadow: 2px 2px 12px #000;
+}
+
+#app .center_con .article_intro .article_img{
+    display: block;
+    width: 100%;
+    height: 135px;
+    /* border: 1px solid #000; */
+}
+
+#app .center_con .article_intro .article_title{
+    display: block;
+    width: 100%;
+    height: 50px;
+    /* border: 1px solid #000; */
+    text-decoration: none;
+    line-height: 50px;
+    text-indent: 20px;
+}
+
+#app .center_con .article_intro .article_title h2{
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid #000; */
+    margin: 0px;
+    color: rgb(51,51,51);
+    font-size: 16px;
+}
+
+#app .center_con .article_intro .intro{
+    width: calc(100% - 20px);
+    height: 82px;
+    /* border: 1px solid #000; */
+    font-size: 13px;
+    margin-left: 20px;
+    overflow: hidden;
+    color: rgb(125,125,125);
+}
+
+#app .center_con .article_intro .update_time{
+    width: 100%;
+    height: 28px;
+    background: url("../images/clock.png") no-repeat;
+    background-size: auto 100%;
+    text-indent: 32px;
+    line-height: 28px;
+    font-size: 12px;
 }
 
 /* 首页右边包括统计数据和推荐文章 */

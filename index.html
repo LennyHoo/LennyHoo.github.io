@@ -38,7 +38,24 @@
         </div>
         <!-- 首页中间包括一些文章标题和概览 -->
         <div class="center_con">
-    
+            <div class="article_intro" v-for="item in article_list">
+                <a href="#" class="article_img" v-bind:style="{ 'background-image': 'url(' + item.image_url + ')','background-repeat':'no-repeat',
+                'background-size':'100% 100%', 'background-position': '0px 0px'}"></a>
+                <a href="#" class="article_title" v-cloak>
+                    <h2>{{ item['title'] }}</h2>
+                </a>
+                <div class="intro" v-clock>
+                    {{ item['intro'] }}
+                </div>
+                <div class="update_time" v-cloak>
+                    {{ item['time'] }}
+                </div>
+            </div>
+            <!-- <div class="article_intro"></div>
+            <div class="article_intro"></div>
+            <div class="article_intro"></div>
+            <div class="article_intro"></div>
+            <div class="article_intro"></div> -->
         </div>
         <!-- 首页右边包括统计数据和推荐文章 -->
         <div class="right_con">
