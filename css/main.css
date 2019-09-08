@@ -1,0 +1,287 @@
+[v-cloak] {
+    display: none !important;
+}
+ 
+ /* 去除body自带的样式 */
+ body{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 主应用 */
+#app{
+    position: relative;
+}
+
+/* 首页上方包括logo， 搜索栏， 和github跳转链接 */
+#app .header_con{
+    width: 100%;
+    height: 75px;
+    border: 1px solid rgb(226,226,226);
+}
+
+/* logo */
+#app .header_con .logo{
+    display: inline-block;
+    background: url("../images/head.jpeg") no-repeat;
+     /* border: 1px solid rgb(226,226,226);  */
+    width: 135px;
+    height: 50px;
+    margin-top: 12.5px;
+    margin-left: 8px;
+    overflow: hidden;
+}
+
+#app .header_con .logo .head_image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgb(226,226,226); 
+    background: url("../images/head.jpeg") no-repeat 0px -15px;
+    background-size: 100% 100%;
+    margin-left: 5px;
+    margin-top: 5px;
+    float: left;
+}
+
+#app .header_con .logo .head_image:hover{
+    transform: rotate(360deg);
+    transition: all 0.5s ease;
+}
+
+#app .header_con .logo .site_name{
+    width: 78px;
+    height: 42px;
+    line-height: 42px;
+    text-decoration: none;
+    float: left;
+    color: rgb(71,74,77);
+    font-size: 20px;
+    padding: 5px;
+}
+
+/* 搜索框 */
+#app .header_con .search{
+    display:inline-block;
+    width: 340px;
+    height: 40px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -170px;
+    outline: none;
+    font-size: 16px;
+    color: rgb(130,127,121);
+    background: url("../images/search.png") no-repeat 12px 10px rgb(103,103,103, 0.8);
+    background-size: auto 50%;
+    text-indent: 55px;
+    background-color: rgb(250,250,250);
+    border: 0px;
+}
+
+/* github跳转 */
+#app .header_con .github_logo{
+    display: inline-block;
+    width: 220px;
+    height: 50px;
+    /* border: 1px solid #000; */
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: url("../images/github_logo.png") no-repeat;
+    background-size: auto 100%;
+}
+
+/* 首页左侧包括最热， 最新标签和导航 */
+#app .left_con{
+    /* border: 1px solid #000; */
+    width: 20%;
+    background-color: rgb(250,250,250);
+    padding: 0px 20px;
+    float: left;
+    margin: 0px;
+}
+
+/* 最新和最热 */
+#app .left_con .left_top_con{
+    position: relative;
+    width: 100%;
+    height: 180px;
+    border-bottom: 1px solid rgb(226,226,226);
+}
+
+/* 最热 */
+#app .left_con .left_top_con .hotest_tag{
+    display: block;
+    position: absolute;
+    left: 60px;
+    top: 40px;
+    width: 110px;
+    height: 40px;
+    text-decoration: none;
+    /* border: 1px solid #000; */
+    border-radius: 15px;
+    text-align: center;
+    line-height: 40px;
+    background: url("../images/platform-hot.png") no-repeat 5px 5px;
+    background-size: auto 80%;
+    text-indent: 20px;
+    color: rgb(51,51,51);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#app .left_con .left_top_con .hotest_tag:hover{
+    background-color: rgb(255,255,255);
+    transition: background-color 0.2s ease;
+}
+
+/* 最新 */
+#app .left_con .left_top_con .latest_tag{
+    display: block;
+    position: absolute;
+    left: 60px;
+    top: 100px;
+    width: 110px;
+    height: 40px;
+    text-decoration: none;
+    /* border: 1px solid #000; */
+    border-radius: 15px;
+    text-align: center;
+    line-height: 40px;
+    background: url("../images/platform-new.png") no-repeat 3px 0px;
+    background-size: auto 100%;
+    text-indent: 20px;
+    color: rgb(51,51,51);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#app .left_con .left_top_con .latest_tag:hover{
+    background-color: rgb(255,255,255);
+    transition: background-color 0.2s ease;
+}
+
+/* 导航栏 */
+#app .left_con .left_bottom_con ul{
+    text-align: center;
+}
+
+/* 导航栏按钮 */
+#app .left_con .left_bottom_con ul li{
+    text-align: left;
+    display: inline-block;
+    width: 200px;
+    height: 55px;
+    list-style: none;
+    /* border: 1px solid #000; */
+    border-radius: 15px;
+}
+
+#app .left_con .left_bottom_con ul li a{
+    display: block;
+    width: 200px;
+    height: 55px;
+    text-decoration: none;
+    line-height: 55px;
+    text-indent: 45px;
+    font-size: 12px;
+    color: rgb(102,102,102);
+}
+
+#app .left_con .left_bottom_con ul li:hover{
+    transform: translateX(10px);
+    background-color: rgb(255,255,255);
+    transition: all 0.5s ease;
+}
+
+/* 返回顶部 */
+#app .gotop{
+    display: block;
+    background: url("../images/goTop.png") no-repeat;
+    /* border: 1px solid #000; */
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    opacity: 0.5;
+}
+
+#app .gotop:hover{
+    opacity: 1.0;
+    transition: opacity 0.2s ease;
+}
+
+/* 首页中间包括一些文章标题和概览 */
+#app .center_con{
+    float: left;
+    width: 60%;
+    height: 500px;
+    border: 1px solid #000;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* 首页右边包括统计数据和推荐文章 */
+#app .right_con{
+    float: left;
+    width: calc(20% - 44px);
+    /* border: 1px solid #000; */
+    text-align: center;
+}
+
+/* 统计数据标题 */
+#app .right_con .statistics h3{
+    display: inline-block;
+    width: 65px;
+    font-size: 13px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 3px;
+}
+
+/* 统计数据块 */
+#app .right_con .stastics{
+    margin: 5px 20px 0px;
+    border: 1px solid #000;
+    text-align: center;
+    background-color: rgb(250,250,250);
+}
+
+#app .right_con .stastics ul{
+    display: inline-block;
+    margin-left: -35px;
+    width: 150px;
+    height: 180px;
+    background-color: rgb(250,250,250);
+}
+/* 统计数据表 */
+#app .right_con .statistics ul li{
+    display: inline-block;
+    list-style: none;
+    width: 100%;
+    height: 60px;
+    /* border: 1px solid #000; */
+    text-indent: 50px;
+    text-align: left;
+    line-height: 60px;
+    font-size: 12px;
+    background-color: rgb(250,250,250);
+}
+
+#app .right_con .statistics ul li:nth-child(1){
+    background: url("../images/view_num.png") no-repeat 3px 10px;
+    background-size: 40px 40px;
+}
+
+#app .right_con .statistics ul li:nth-child(2){
+    background: url("../images/aticle_num.png") no-repeat 3px 10px;
+    background-size: 40px 40px;
+}
+
+#app .right_con .statistics ul li:nth-child(3){
+    background: url("../images/comments_num.png") no-repeat 3px 10px;
+    background-size: 40px 40px;
+}

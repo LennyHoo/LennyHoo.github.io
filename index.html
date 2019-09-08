@@ -1,1 +1,59 @@
-个人主页
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hlnBlog</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 首页上方包括logo， 搜索栏， 和github跳转链接 -->
+        <div class="header_con">
+            <div class="logo">
+                <a href="#" class="head_image"></a>
+                <a href="#" class="site_name">hlnBlog</a>
+            </div>
+            <input type="text" name="" id="" class="search" placeholder="搜索关键词">
+            <a href="https://github.com/LennyHoo" class="github_logo" 
+                target="_blank" title="我的GitHub主页"></a>
+        </div>
+        <!-- 首页左侧包括最热， 最新标签和导航 -->
+        <div class="left_con">
+            <div class="left_top_con">
+                <a href="#" class="hotest_tag">热门</a>
+                <a href="#" class="latest_tag">最新</a>
+            </div>
+            <div class="left_bottom_con">
+                <h6 style="margin: 5px; color: rgb(166,153,153);">&nbsp;&nbsp;导航</h6>
+                <ul class="tag_list">
+                    <li v-for="item in tag_list" 
+                    v-bind:style="{ 'background-image': 'url(' + item.url + ')','background-repeat':'no-repeat',
+                        'background-size':'28px 28px', 'background-position': '5px 15px'}"><a href="#">
+                            {{ item.tag }}</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 首页中间包括一些文章标题和概览 -->
+        <div class="center_con">
+    
+        </div>
+        <!-- 首页右边包括统计数据和推荐文章 -->
+        <div class="right_con">
+            <div class="statistics">
+                <h3>统计数据</h3>
+                <ul>
+                    <li v-cloak>浏览次数：{{ statistics['view_num'] }}</li>
+                    <li v-cloak>文章总数：{{ statistics['article_num'] }}</li>
+                    <li v-cloak>评论总数：{{ statistics['comment_num'] }}</li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="gotop"></a>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
