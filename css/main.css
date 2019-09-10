@@ -78,6 +78,7 @@
     text-indent: 55px;
     background-color: rgb(250,250,250);
     border: 0px;
+    border-radius: 5px;
 }
 
 /* github跳转 */
@@ -214,7 +215,7 @@
     transition: opacity 0.2s ease;
 }
 
-/* 首页中间包括一些文章标题和概览 */
+/* 首页中间包括一些文章标题，概览和页面跳转 */
 #app .center_con{
     float: left;
     width: 60%;
@@ -235,6 +236,7 @@
     margin-bottom: 15px;
     border: 1px solid rgb(220,220,220);
     overflow: hidden;
+    border-radius: 5px;
 }
 
 #app .center_con .article_intro:hover{
@@ -288,9 +290,34 @@
     font-size: 12px;
 }
 
+/* 文章内容 */
+#app .center_con .article_content{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: auto;
+}
+
+#app .center_con .article_content .goback{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 28px;
+    height: 28px;
+    background: url("../images/go_back.jpg") no-repeat;
+    background-size: 28px 28px;
+    /* border: 1px solid #000; */
+    border-radius: 50%;
+}
+
+#app .center_con .article_content iframe{
+    width: 100%;
+    height: 100%;
+}
+
 /* 首页右边包括统计数据和推荐文章 */
 #app .right_con{
-    float: left;
+    float: right;
     width: calc(20% - 44px);
     /* border: 1px solid #000; */
     text-align: center;
@@ -348,4 +375,49 @@
 #app .right_con .statistics ul li:nth-child(3){
     background: url("../images/comments_num.png") no-repeat 3px 10px;
     background-size: 40px 40px;
+}
+
+/* 文章概览上浮效果 */
+.article_up-enter{
+    transform: translateY(300px);
+    opacity: 1;
+}
+
+.article_up-enter-active{
+    /* transform: translateY(300px); */
+    /* opacity: 1; */
+    transition: all 1s linear;
+}
+
+/* 文章内容效果 */
+.content_up-enter{
+    transform: translateY(300px);
+    opacity: 1;
+}
+
+.content_up-enter-active{
+    /* transform: translateY(300px); */
+    /* opacity: 1; */
+    transition: all 1s linear;
+}
+
+/* 底部翻页 */
+#app .footer{
+    width: 100%;
+    height: 42px;
+    /* border: 1px solid #000; */
+    float: left;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#app .footer a{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    text-decoration: none;
+    color: rgb(51,61,64);
+    line-height: 42px;
+    padding: 3px;
+    text-align: center;
 }
