@@ -37,7 +37,7 @@
     height: 40px;
     border-radius: 50%;
     border: 1px solid rgb(226,226,226); 
-    background: url("../images/head.jpeg") no-repeat 0px -15px;
+    background: url("../images/head.jpg") no-repeat 0px 0px;
     background-size: 100% 100%;
     margin-left: 5px;
     margin-top: 5px;
