@@ -26,7 +26,7 @@
                 <option v-for="item in tag_list" :value="item.nickname">{{ item.tag }}</option>
             </select>
             <input type="button" value="" class="add_tag" @click="add_tag=!add_tag"/>
-            <form action="http://127.0.0.1:8000/add_tag_img" method="post" 
+            <form action="http://217.69.1.36:8000/add_tag_img" method="post" 
                 enctype="multipart/form-data" class="add_tag_form" target="id_iframe" v-if="add_tag">
                 <input type="file" value="" class="tag_file" name="tag_img" id="tag_file"/>
                 <input type="text" class="tag" placeholder="tag" v-model="tag"/>
@@ -36,12 +36,12 @@
             <textarea placeholder="在此处输入文章概述（60字以内）" v-model="intro"></textarea>
             <!-- 这个iframe标签只是用来防止form表单跳转 -->
             <iframe id="id_iframe" name="id_iframe" style="display:none;"></iframe>
-            <form action="http://127.0.0.1:8000/add_img" method="post" 
+            <form action="http://217.69.1.36:8000/add_img" method="post" 
                 enctype="multipart/form-data" class="add_img" target="id_iframe">
                 <input type="file" value="" class="file" name="img"/>
                 <input type="submit" value="上传" class="upload"/>
             </form>
-            <form action="http://127.0.0.1:8000/add_md" method="post" 
+            <form action="http://217.69.1.36:8000/add_md" method="post" 
                 class="add_md" enctype="multipart/form-data" target="id_iframe">
                 <input type="file" value="" class="file" name="md"/>
                 <input type="submit" value="上传" class="upload"/>

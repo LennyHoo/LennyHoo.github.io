@@ -49,6 +49,7 @@ var vm = new Vue({
             file_name = document.getElementById('tag_file').files[0].name;
             this.$http.post("http://217.69.1.36:8000/add_tag", {file_name: file_name, tag: this.tag, nickname: this.nickname}
                 , {emulateJSON: true}).then(msg => {
+                    console.log("ok");
                     content = msg.body;
                     if(content=="ok"){
                         this.get_tags();
