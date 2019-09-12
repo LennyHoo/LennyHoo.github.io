@@ -7,7 +7,7 @@ var vm = new Vue({
         login(){
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
-            this.$http.post("http://217.69.1.36:8000/login", {username: username, password: password}
+            this.$http.post("http://www.aspendove.xyz:8000/login", {username: username, password: password}
                 , {emulateJSON: true}).then(msg => {
                     content = msg.body;
                     if(content['status']==="ok") {
