@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>hlnBlog</title>
     <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/vue.js"></script>
+    <script src="./js/vue.min.js"></script>
     <script src="./js/vue-resource-1.3.4.js"></script>
     <style>
         /* 设置整个滚动条的一些属性，宽度针对垂直滚动条，高度针对水平滚动条 */
@@ -58,22 +58,28 @@
                 <a href="./admin.html" class="head_image"></a>
                 <a href="#" class="site_name">hlnBlog</a>
             </div>
-            <input type="text" name="" id="" class="search" placeholder="搜索关键词">
+            <input type="text" name="" id="" class="search" placeholder="搜索关键词" v-model="keyword"
+                @keyup.enter="search(keyword)">
             <a href="https://github.com/LennyHoo" class="github_logo" 
                 target="_blank" title="我的GitHub主页"></a>
         </div>
         <!-- 首页左侧包括最热， 最新标签和导航 -->
         <div v-cloak class="left_con">
             <div class="left_top_con">
-                <a href="#" class="hotest_tag">热门</a>
-                <a href="#" class="latest_tag">最新</a>
+                <a href="#" class="hotest_tag" @click.prevent="match_article_overview('hotest')">
+                热门
+                </a>
+                <a href="#" class="latest_tag" @click.prevent="match_article_overview('latest')">
+                最新
+                </a>
             </div>
             <div class="left_bottom_con">
                 <h6 style="margin: 5px; color: rgb(166,153,153);">&nbsp;&nbsp;导航</h6>
                 <ul class="tag_list">
                     <li v-for="item in tag_list" 
-                    v-bind:style="{ 'background-image': 'url(' + item.url + ')','background-repeat':'no-repeat',
-                        'background-size':'28px 28px', 'background-position': '5px 15px'}"><a href="#">
+                    v-bind:style="{ 'background-image': 'url(' + item.img_url + ')','background-repeat':'no-repeat',
+                        'background-size':'28px 28px', 'background-position': '5px 15px'}" 
+                        @click.prevent="match_article_overview(item.tag)"><a href="#">
                             {{ item.tag }}</a></li>
                 </ul>
             </div>
@@ -81,7 +87,7 @@
         <!-- 首页中间包括一些文章标题，概览和页面跳转-->
         <div class="center_con">
             <transition-group name="article_up">
-                <div v-show="mode=='overview'" @click="mode='content'" v-cloak class="article_intro" v-for="item in article_list" :key="item.id">
+                <div v-show="mode=='overview'"  v-cloak class="article_intro" v-for="item in article_list" :key="item.id" @click="switch_mode_to_content(item['article_url'], item['id'])">
                     <a href="#" class="article_img" v-bind:style="{ 'background-image': 'url(' + item.img_url + ')','background-repeat':'no-repeat',
                     'background-size':'100% 100%', 'background-position': '0px 0px'}"></a>
                     <a href="#" class="article_title" v-cloak>
@@ -98,16 +104,16 @@
             <!-- 文章内容 -->
             <transition name="content_up">
                 <div v-cloak v-show="mode=='content'" class="article_content">
-                        <a href="#" class="goback" @click="mode='overview'"></a>
-                        <iframe src="./login.html" frameborder="0" 
-                            id="iframe-content" width='100%' height='100%'>
-                        </iframe>
+                    <a href="#" class="goback" @click="switch_mode_to_overview()"></a>
+                    <iframe :src="article_url" frameborder="0" 
+                        id="iframe-content" width='100%' height='100%' allowfullscreen="true">
+                    </iframe>
                 </div>
             </transition>
         </div>
         <!-- 首页右边包括统计数据和推荐文章 -->
         <div class="right_con">
-            <div class="statistics">
+            <div class="statistics" v-show="mode=='overview'">
                 <h3>统计数据</h3>
                 <ul>
                     <li v-cloak>浏览次数：{{ statistics['view_num'] }}</li>

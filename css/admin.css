@@ -88,14 +88,52 @@ body{
 }
 
 .title{
-    width: 100%;
+    width: 50%;
     height: 24px;
     line-height: 24px;
     border-radius: 5px;
     outline: none;
     border: 0px;
     text-indent: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+}
+
+.tag{
+    width: 68px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 5px;
+    outline: none;
+    border: 0px;
+    text-indent: 5px;
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.nickname{
+    width: 68px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 5px;
+    outline: none;
+    border: 0px;
+    text-indent: 5px;
+    margin: 0px;
+    margin-left: 5px;
+}
+
+select{
+    width: 30%;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 5px;
+    outline: none;
+    border: 0px;
+    text-indent: 5px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    display: inline-block;
+    font-size: 12px;
 }
 
 form{
@@ -113,6 +151,7 @@ form{
     text-align: center;
     border-radius: 15px;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .upload{
@@ -130,6 +169,7 @@ form{
     border: 0px;
     position: absolute;
     right: 5px;
+    cursor: pointer;
 }
 
 .file{
@@ -150,4 +190,40 @@ form{
     font-size: 12px;
     border: 0px;
     margin: 0px;
+}
+
+textarea{
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 13px;
+    padding: 0px;
+    font-family: 'Microsoft Yahei';
+}
+
+select option{
+    font-size: 12px;
+}
+
+.add_tag{
+    float: right;
+    height: 24px;
+    border-radius: 5px;
+    outline: none;
+    border: 0px;
+    margin-bottom: 15px;
+    width: 24px;
+    background: url("../images/add_tag.jpg") no-repeat;
+    background-size: 24px 24px;
+}
+
+.add_tag_form{
+    margin-top: 5px;
+}
+
+.tag_file{
+    width: 72px;
 }
