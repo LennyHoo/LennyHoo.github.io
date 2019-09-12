@@ -19,7 +19,7 @@ var vm = new Vue({
                 alert("填写的信息不完整");
                 return;
             }
-            this.$http.post("http://217.69.1.36:8000/summit", 
+            this.$http.post("https://217.69.1.36:8000/summit", 
             {title: this.title, tag: this.selected_tag, intro: this.intro}, 
             {emulateJSON: true}).then(msg => {
                 content = msg.body;
@@ -30,7 +30,7 @@ var vm = new Vue({
         get_tags(){
             // 获取标签描述数据
             this.tag_list = [];
-            this.$http.get("http://217.69.1.36:8000/get_tags").then(msg => {
+            this.$http.get("https://217.69.1.36:8000/get_tags").then(msg => {
                 content = msg.body;
                 content.forEach(element => {
                     this.tag_list.push(element);
@@ -47,7 +47,7 @@ var vm = new Vue({
                 return;
             }
             file_name = document.getElementById('tag_file').files[0].name;
-            this.$http.post("http://217.69.1.36:8000/add_tag", {file_name: file_name, tag: this.tag, nickname: this.nickname}
+            this.$http.post("https://217.69.1.36:8000/add_tag", {file_name: file_name, tag: this.tag, nickname: this.nickname}
                 , {emulateJSON: true}).then(msg => {
                     console.log("ok");
                     content = msg.body;

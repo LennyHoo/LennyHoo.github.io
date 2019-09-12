@@ -17,14 +17,14 @@ var vm = new Vue({
         update(){
             // 获取首页文章
             this.article_list = [];
-            this.$http.get("http://217.69.1.36:8000/update/latest/1").then(msg => {
+            this.$http.get("https://217.69.1.36:8000/update/latest/1").then(msg => {
                 content = msg.body;
                 content.forEach(element => {
                     this.article_list.push(element);
                 });
             });
             // 获取浏览量、文章数量等数据
-            this.$http.get("http://217.69.1.36:8000/statistics").then(msg => {
+            this.$http.get("https://217.69.1.36:8000/statistics").then(msg => {
                 content = msg.body[0];
                 this.statistics['view_num'] = content['view_num'];
                 this.statistics['article_num'] = content['article_num'];
@@ -32,7 +32,7 @@ var vm = new Vue({
                 this.all_page_num = content['all_page_num'];
             })
             // 获取标签描述数据
-            this.$http.get("http://217.69.1.36:8000/get_tags").then(msg => {
+            this.$http.get("https://217.69.1.36:8000/get_tags").then(msg => {
                 this.tag_list = []
                 content = msg.body;
                 content.forEach(element => {
@@ -44,7 +44,7 @@ var vm = new Vue({
             /*翻页功能*/
             if(page_num<1 || page_num > this.all_page_num) return;
             this.article_list = [];
-            this.$http.get("http://217.69.1.36:8000/update/"+String(page_num)).then(msg => {
+            this.$http.get("https://217.69.1.36:8000/update/"+String(page_num)).then(msg => {
                 content = msg.body;
                 content.forEach(element => {
                     this.article_list.push(element);
@@ -73,11 +73,11 @@ var vm = new Vue({
             var frame = document.getElementById("iframe-content");
             frame.contentWindow.location.href = this.article_url;
             this.mode = "content";
-            this.$http.get("http://217.69.1.36:8000/log_article_view/"+id);
+            this.$http.get("https://217.69.1.36:8000/log_article_view/"+id);
         },
         match_article_overview(tag){
             this.article_list = [];
-            this.$http.get("http://217.69.1.36:8000/update/"+tag+"/1").then(msg => {
+            this.$http.get("https://217.69.1.36:8000/update/"+tag+"/1").then(msg => {
                 content = msg.body;
                 this.all_page_num = Math.floor(content.length / 9) + 1;
                 content.forEach(element => {
@@ -87,7 +87,7 @@ var vm = new Vue({
         },
         search(keyword){
             this.article_list = [];
-            this.$http.get("http://217.69.1.36:8000/search/"+keyword).then(msg => {
+            this.$http.get("https://217.69.1.36:8000/search/"+keyword).then(msg => {
                 content = msg.body;
                 this.all_page_num = Math.floor(content.length / 9) + 1;
                 content.forEach(element => {
