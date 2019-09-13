@@ -104,7 +104,7 @@
             </transition-group>
             <!-- 文章内容 -->
             <transition name="content_up">
-                <div v-cloak v-show="mode=='content'" class="article_content">
+                <div v-cloak v-if="mode=='content'" class="article_content">
                     <a href="#" class="goback" @click="switch_mode_to_overview()"></a>
                     <iframe :src="article_url" frameborder="0" 
                         id="iframe-content" width='100%' height='100%' allowfullscreen="true">
