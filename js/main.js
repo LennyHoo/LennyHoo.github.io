@@ -72,8 +72,8 @@ var vm = new Vue({
             this.article_url = url;
             var frame = document.getElementById("iframe-content");
             frame.contentWindow.location.href = this.article_url;
-            this.mode = "content";
             this.$http.get("http://www.aspendove.xyz:8000/log_article_view/"+id);
+            this.mode = "content";
         },
         match_article_overview(tag){
             this.article_list = [];
