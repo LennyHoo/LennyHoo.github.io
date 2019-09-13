@@ -77,6 +77,7 @@ var vm = new Vue({
         },
         match_article_overview(tag){
             this.article_list = [];
+            this.mode = "overview";
             this.$http.get("http://www.aspendove.xyz:8000/update/"+tag+"/1").then(msg => {
                 content = msg.body;
                 this.all_page_num = Math.floor(content.length / 9) + 1;
